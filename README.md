@@ -2,10 +2,9 @@
 
 # Nested X11 dwm sessions
 
-Clutch is a simple script that allows you to run nested `dwm` session inside
-your existing X session. This comes in handy when you already have a desktop
-environment running (like Gnome) but you want to have a tiling window manager
-as well.
+Clutch allows you to run nested `dwm` session inside your existing X session.
+This comes in handy when you already have a desktop environment running (like
+Gnome) but you want to have a tiling window manager as well.
 
 > [!IMPORTANT]
 > All the tests were done on Xorg so if you are using Wayland this may not work
