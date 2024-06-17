@@ -1,0 +1,1 @@
+- If we want dwm to compile we need some dev libraries. Find what those are and add those deps to readme.
