@@ -20,6 +20,8 @@ coding I do prefer tiling window managers.
 There are some extensions available for Gnome that introduce tiling but none of
 them were up to par with proper tiling window manager like `dwm` or `i3`.
 
+This approach DOES NOT require `dwm` to be installed on your machine.
+
 # How?
 
 This project heavily relies on several [Suckless](https://suckless.org/)
@@ -42,7 +44,7 @@ allows us to run nested X server.
 ## Tips and tricks
 
 - If you resize the window execute `xrandr` program in your `Xephyr` session to
-  make `dwm` the size of the window.
+  Make `dwm` the size of the window.
 - Clutch respects `$XDG_CACHE_HOME`.
   
 
@@ -50,3 +52,4 @@ allows us to run nested X server.
 
 - Gnome Shell extension which provides scrollable tiling -
   https://github.com/paperwm/PaperWM
+
