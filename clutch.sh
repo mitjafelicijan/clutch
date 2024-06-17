@@ -106,8 +106,16 @@ while [[ "$#" -gt 0 ]]; do
 			sleep 1 # Give Xephyr a chance to properly start. 
 			DISPLAY=:$DISPLAY_ID ./vendor/dwm-$DWM_VERSION/dwm
 			;;
-		info)
-			echo "Information"
+		--info)
+			echo "General session settings:"
+			echo "   DISPLAY_ID: $DISPLAY_ID"
+			echo "   RESOLUTION: $RESOLUTION"
+			echo "   DPI: $DPI"
+			echo "   XEPHYR_FLAGS: $XEPHYR_FLAGS"
+			echo "Software versions:"
+			echo "   DWM_VERSION: $DWM_VERSION"
+			echo "   DMENU_VERSION: $DMENU_VERSION"
+			echo "   ST_VERSION: $ST_VERSION"
 			;;
 		*)
 			usage
