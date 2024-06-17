@@ -54,7 +54,7 @@ fi
 
 CLUTCH_PATH="$XDG_CACHE_HOME/clutch"
 
-# Loop until we find an available display number or reach max attempts
+# Loop until we find an available display number or reach max attempts.
 MAX_ATTEMPTS=50
 ATTEMPTS=0
 while [ -e "/tmp/.X11-unix/X$DISPLAY_ID" ]; do
@@ -72,8 +72,21 @@ while [[ "$#" -gt 0 ]]; do
 		--bootstrap)
 			echo "Downloading and compiling dependencies..."
 
-			# Checks if $XDG_CACHE_HOME is set and uses that or uses ~/.cache.
-			# https://wiki.archlinux.org/title/XDG_Base_Directory
+			mkdir -p $CLUTCH_PATH
+			ORIGINAL_DIR=`pwd`
+			cd $CLUTCH_PATH
+
+			# Downloading dependencies.
+			wget -c https://dl.suckless.org/dwm/dwm-$DWM_VERSION.tar.gz
+			wget -c https://dl.suckless.org/tools/dmenu-$DMENU_VERSION.tar.gz
+			wget -c https://dl.suckless.org/st/st-$ST_VERSION.tar.gz
+
+			# Extracting and Compiling dependencies. 
+			tar xvf dwm-$DWM_VERSION.tar.gz && cd dwm-$DWM_VERSION && make -j`nproc` && cd ..
+			tar xvf dmenu-$DMENU_VERSION.tar.gz && cd dmenu-$DMENU_VERSION && make -j`nproc` && cd ..
+			tar xvf st-$ST_VERSION.tar.gz && cd st-$ST_VERSION && make -j`nproc` && cd ..
+
+			cd $ORIGINAL_DIR
 			;;
 		--killall)
 			echo "Killing all the existing Xephyr and dwm instances..."
@@ -84,9 +97,9 @@ while [[ "$#" -gt 0 ]]; do
 			echo "Starting Xephyr..."
 
 			# Fixes PATH which gets sent to dwm to make st and dmenu work.
-			export PATH=`pwd`/vendor/dwm-$DWM_VERSION:$PATH
-			export PATH=`pwd`/vendor/dmenu-$DMENU_VERSION:$PATH
-			export PATH=`pwd`/vendor/st-$ST_VERSION:$PATH
+			export PATH=$CLUTCH_PATH/dwm-$DWM_VERSION:$PATH
+			export PATH=$CLUTCH_PATH/dmenu-$DMENU_VERSION:$PATH
+			export PATH=$CLUTCH_PATH/st-$ST_VERSION:$PATH
 
 			# Runs Xephyr and dwm.
 			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI -title "Clutch:$DISPLAY_ID" :$DISPLAY_ID &
