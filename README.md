@@ -19,7 +19,8 @@ coding I do prefer tiling window managers.
 There are some extensions available for Gnome that introduce tiling but none of
 them were up to par with proper tiling window manager like `dwm` or `i3`.
 
-This approach DOES NOT require `dwm` to be installed on your machine.
+This approach DOES NOT require `dwm` to be installed on your machine. All these
+dependencies will be downloaded and compiled automatically.
 
 # How?
 
@@ -46,6 +47,9 @@ allows us to run nested X server.
   Make `dwm` the size of the window.
 - Clutch respects `$XDG_CACHE_HOME`.
   
+## Acknowledgment
+
+- https://stackoverflow.com/a/31443098
 
 ## Alternatives
 

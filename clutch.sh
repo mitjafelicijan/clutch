@@ -1,22 +1,17 @@
 #!/usr/bin/env bash
 
-set -xe
+set -e
 
 # General settings for the Xephyr session.
-DISPLAY_ID=99
+DISPLAY_ID=50
 RESOLUTION=1280x720
 DPI=96
 XEPHYR_FLAGS="-ac -br -noreset -no-host-grab"
 
-# Used when downloading the source tarballs from the Suckless website.
+# Used when downloading the source tarballs.
 DWM_VERSION=6.5
 DMENU_VERSION=5.3
 ST_VERSION=0.9.2
-
-CLUTCH_PATH=
-
-# FIXME: If we want dwm to compile we need some dev libraries. Find what those
-# are and add those deps to readme.
 
 # Check if GCC or Clang is installed.
 if ! which gcc > /dev/null 2>&1 && ! which clang > /dev/null 2>&1; then
@@ -42,6 +37,7 @@ usage() {
 	echo "  --bootstrap    Downloads and compiles required software"
 	echo "  --killall      Kills all running Xephyr and dwm instances"
 	echo "  --run          Runs dwm session in Xephyr"
+	echo "  --info         Displays all relavant paths and settings for Clutch"
 	exit 1
 }
 
@@ -50,6 +46,27 @@ if [ $# -eq 0 ]; then
 	usage
 fi
 
+# Fixes $XDG_CACHE_HOME path if not set and temporary sets it to ~/.cache if
+# not set up by users profile.
+if [ -z "$XDG_CACHE_HOME" ]; then
+	XDG_CACHE_HOME="$HOME/.cache"
+fi
+
+CLUTCH_PATH="$XDG_CACHE_HOME/clutch"
+
+# Loop until we find an available display number or reach max attempts
+MAX_ATTEMPTS=50
+ATTEMPTS=0
+while [ -e "/tmp/.X11-unix/X$DISPLAY_ID" ]; do
+	DISPLAY_ID=$((DISPLAY_ID + 1))
+	ATTEMPTS=$((ATTEMPTS + 1))
+	if [ $ATTEMPTS -ge $MAX_ATTEMPTS ]; then
+		echo "No available display found after $MAX_ATTEMPTS attempts."
+		exit 1
+	fi
+done
+
+# Parses CLI arguments.
 while [[ "$#" -gt 0 ]]; do
 	case $1 in
 		--bootstrap)
@@ -72,9 +89,12 @@ while [[ "$#" -gt 0 ]]; do
 			export PATH=`pwd`/vendor/st-$ST_VERSION:$PATH
 
 			# Runs Xephyr and dwm.
-			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI :$DISPLAY_ID &
+			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI -title "Clutch:$DISPLAY_ID" :$DISPLAY_ID &
 			sleep 1 # Give Xephyr a chance to properly start. 
 			DISPLAY=:$DISPLAY_ID ./vendor/dwm-$DWM_VERSION/dwm
+			;;
+		info)
+			echo "Information"
 			;;
 		*)
 			usage
