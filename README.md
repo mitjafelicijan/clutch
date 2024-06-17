@@ -30,6 +30,9 @@ programs such as:
 These three programs together gives us tiling window manager, lean terminal
 emulator and dynamic menu (program launcher).
 
+All this is achieved with [Xephyr](https://en.wikipedia.org/wiki/Xephyr) which
+allows us to run nested X server.
+
 ## Tips and tricks
 
 - If you resize the window execute `xrandr` program in your `Xephyr` session to
@@ -37,4 +40,5 @@ emulator and dynamic menu (program launcher).
 
 ## Alternatives
 
-- Gnome Shell extension which provides scrollable tiling - https://github.com/paperwm/PaperWM
+- Gnome Shell extension which provides scrollable tiling -
+  https://github.com/paperwm/PaperWM

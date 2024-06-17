@@ -29,7 +29,7 @@ if ! which Xephyr > /dev/null 2>&1; then
 	exit 1
 fi
 
-# Function to display usage information
+# Function to display usage information.
 usage() {
 	echo "Usage: $0 [--bootstrap | --run]"
 	echo "  --bootstrap    Downloads and compiles required software"
@@ -38,7 +38,7 @@ usage() {
 	exit 1
 }
 
-# Check if no arguments are provided
+# Check if no arguments are provided.
 if [ $# -eq 0 ]; then
 	usage
 fi
