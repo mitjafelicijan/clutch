@@ -33,7 +33,7 @@ emulator and dynamic menu (program launcher).
 All this is achieved with [Xephyr](https://en.wikipedia.org/wiki/Xephyr) which
 allows us to run nested X server.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Because some of the applications are downloaded and need to be compiled GCC
 > or Clang is also required. 
 

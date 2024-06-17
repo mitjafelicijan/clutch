@@ -11,6 +11,11 @@ DWM_VERSION=6.5
 DMENU_VERSION=5.3
 ST_VERSION=0.9.2
 
+CLUTCH_PATH=
+
+# FIXME: If we want dwm to compile we need some dev libraries. Find what those
+# are and add those deps to readme.
+
 # Check if GCC or Clang is installed.
 if ! which gcc > /dev/null 2>&1 && ! which clang > /dev/null 2>&1; then
 	echo "GCC or Clang is not installed. Please install either GCC or Clang to continue."
