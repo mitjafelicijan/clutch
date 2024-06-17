@@ -33,10 +33,16 @@ emulator and dynamic menu (program launcher).
 All this is achieved with [Xephyr](https://en.wikipedia.org/wiki/Xephyr) which
 allows us to run nested X server.
 
+> [!NOTE]
+> Because some of the applications are downloaded and need to be compiled GCC
+> or Clang is also required. 
+
 ## Tips and tricks
 
 - If you resize the window execute `xrandr` program in your `Xephyr` session to
   make `dwm` the size of the window.
+- Clutch respects `$XDG_CACHE_HOME`
+  https://wiki.archlinux.org/title/XDG_Base_Directory.
 
 ## Alternatives
 

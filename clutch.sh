@@ -47,6 +47,9 @@ while [[ "$#" -gt 0 ]]; do
 	case $1 in
 		--bootstrap)
 			echo "Downloading and compiling dependencies..."
+
+			# Checks if $XDG_CACHE_HOME is set and uses that or uses ~/.cache.
+			# https://wiki.archlinux.org/title/XDG_Base_Directory
 			;;
 		--killall)
 			echo "Killing all the existing Xephyr and dwm instances..."
@@ -63,7 +66,7 @@ while [[ "$#" -gt 0 ]]; do
 
 			# Runs Xephyr and dwm.
 			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI :$DISPLAY_ID &
-			sleep 1 # Give Xephyr chance to properly start. 
+			sleep 1 # Give Xephyr a chance to properly start. 
 			DISPLAY=:$DISPLAY_ID ./vendor/dwm-$DWM_VERSION/dwm
 			;;
 		*)
