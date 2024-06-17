@@ -1,3 +1,5 @@
+![Preview](https://github.com/mitjafelicijan/clutch/assets/296714/de129db6-b7ed-4877-81f0-d3239c60f4d2)
+
 # Nested X11 dwm sessions
 
 Clutch is a simple script that allows you to run nested `dwm` session inside

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xe
+
 # General settings for the Xephyr session.
 DISPLAY_ID=99
 RESOLUTION=1280x720
