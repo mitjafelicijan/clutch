@@ -41,8 +41,8 @@ allows us to run nested X server.
 
 - If you resize the window execute `xrandr` program in your `Xephyr` session to
   make `dwm` the size of the window.
-- Clutch respects `$XDG_CACHE_HOME`
-  https://wiki.archlinux.org/title/XDG_Base_Directory.
+- Clutch respects `$XDG_CACHE_HOME`.
+  
 
 ## Alternatives
 
