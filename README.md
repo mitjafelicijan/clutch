@@ -99,6 +99,24 @@ X11 server display id.
 > All code regarding this project lived in `clutch.sh` file so there is no fear
 > of missing something when moving this tool around.
 
+`clutch.sh` has several options available via arguments.
+
+```sh
+$ bash clutch.sh --help
+Usage: clutch.sh [--bootstrap | --run]
+  --bootstrap    Downloads and compiles required software
+  --killall      Kills all running Xephyr and dwm instances
+  --run          Runs dwm session in Xephyr
+  --info         Displays all relavant paths and settings for Clutch
+```
+
+- Bootstrap should be used only for the first time to prepare environment.
+- Most of the time you will be using `--run` which starts a session.
+- `--killall` is a nuclear option if something goes wrong and some sessions are
+  still running even though you closed them.
+- Info with `--info` is there just to tell you which software versions are you
+  running and which paths apply to your setup.
+
 > [!TIP]
 > If you resize the window manually execute `xrandr` program in your `Xephyr`
 > session to Make `dwm` the size of the window.
