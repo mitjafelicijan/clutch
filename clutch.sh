@@ -87,6 +87,12 @@ while [[ "$#" -gt 0 ]]; do
 			tar xvf st-$ST_VERSION.tar.gz && cd st-$ST_VERSION && make -j`nproc` && cd ..
 
 			cd $ORIGINAL_DIR
+
+			echo -e "\n\n"
+			echo "Software downloaded and compiled. If you would like to configure"
+			echo "further please go to directory $CLUTCH_PATH and then run 'make'."
+			echo "Do not do 'make install' since it is not required. Relative path"
+			echo "is being appended to \$PATH and passed to the 'dwm'."
 			;;
 		--killall)
 			echo "Killing all the existing Xephyr and dwm instances..."
