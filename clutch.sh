@@ -107,10 +107,12 @@ while [[ "$#" -gt 0 ]]; do
 			export PATH=$CLUTCH_PATH/dmenu-$DMENU_VERSION:$PATH
 			export PATH=$CLUTCH_PATH/st-$ST_VERSION:$PATH
 
+			echo $PATH
+
 			# Runs Xephyr and dwm.
 			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI -title "Clutch:$DISPLAY_ID" :$DISPLAY_ID &
 			sleep 1 # Give Xephyr a chance to properly start. 
-			DISPLAY=:$DISPLAY_ID ./vendor/dwm-$DWM_VERSION/dwm
+			DISPLAY=:$DISPLAY_ID dwm
 			;;
 		--info)
 			echo "General session settings:"

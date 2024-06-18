@@ -1,4 +1,4 @@
-![Preview](https://github.com/mitjafelicijan/clutch/assets/296714/480af24f-df4c-457f-9551-a43f63a623ac)
+![Preview](https://github.com/mitjafelicijan/clutch/assets/296714/dca4a47a-d33e-46fd-8a45-b54b633909a2)
 
 # Nested X11 dwm sessions
 
