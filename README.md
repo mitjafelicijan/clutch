@@ -53,6 +53,14 @@ allows us to run nested X server.
 
 ## Alternatives
 
-- Gnome Shell extension which provides scrollable tiling -
-  https://github.com/paperwm/PaperWM
+- https://github.com/paperwm/PaperWM
+- https://github.com/material-shell/material-shell
+- https://github.com/pop-os/shell
+- https://github.com/gTile/gTile
+- https://github.com/regolith-linux
 
+## License
+
+[clutch](https://github.com/mitjafelicijan/clutch) was written by [Mitja
+Felicijan](https://mitjafelicijan.com) and is released under the BSD
+two-clause license, see the LICENSE file for more information.
