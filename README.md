@@ -100,8 +100,8 @@ X11 server display id.
 > of missing something when moving this tool around.
 
 > [!TIP]
-> If you resize the window execute `xrandr` program in your `Xephyr` session to
-> Make `dwm` the size of the window.
+> If you resize the window manually execute `xrandr` program in your `Xephyr`
+> session to Make `dwm` the size of the window.
 
 ## Configuration
 
