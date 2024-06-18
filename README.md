@@ -19,8 +19,8 @@ how it was done. Nothing magical happening here.
 Personally I like having Gnome as my main window manager because it comes with
 all the niceties and quality of life stuff like network management, calendar
 integration etc. You could achieve this in tiling window managers but it would
-take more work. But for coding and the work I do regularly I do prefer tiling
-window managers.
+take more work. As far as it goes for coding and the work I do regularly I do
+prefer tiling window managers.
 
 There are some extensions available for Gnome that introduce tiling but none of
 them were up to par with proper tiling window manager like `dwm` or `i3`.
