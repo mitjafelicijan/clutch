@@ -8,7 +8,7 @@ Gnome) but you want to have a tiling window manager as well.
 
 > [!NOTE]
 > Even though this was tested and works on X11 and on Wayland I use it on X11
-> daily exclusively. So, your millage may wary.
+> exclusively. So, your millage may wary.
 
 All this can be achieved manually, this script just packages all the commands
 into a nice package that is easy to use. Please check `clutch.sh` script to see
