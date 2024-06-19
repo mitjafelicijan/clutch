@@ -33,7 +33,7 @@ fi
 
 # Function to display usage information.
 usage() {
-	echo "Usage: $0 [--bootstrap | --run]"
+	echo "Usage: $0 [--bootstrap | --run | --kilall | --info]"
 	echo "  --bootstrap    Downloads and compiles required software"
 	echo "  --killall      Kills all running Xephyr and dwm instances"
 	echo "  --run          Runs dwm session in Xephyr"

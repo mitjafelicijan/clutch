@@ -104,7 +104,7 @@ X11 server display id.
 
 ```sh
 $ bash clutch.sh --help
-Usage: clutch.sh [--bootstrap | --run]
+Usage: clutch.sh [--bootstrap | --run | --kilall | --info]
   --bootstrap    Downloads and compiles required software
   --killall      Kills all running Xephyr and dwm instances
   --run          Runs dwm session in Xephyr
