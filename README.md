@@ -41,7 +41,7 @@ Because of this reason, this project heavily relies on several
 These three programs together gives us tiling window manager, lean terminal
 emulator and dynamic menu (program launcher).
 
-The magic of nesting X11 sessions is achieved with
+The secret ingredient in all this is
 [Xephyr](https://en.wikipedia.org/wiki/Xephyr) which allows us to run nested X
 server.
 
