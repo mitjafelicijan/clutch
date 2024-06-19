@@ -106,8 +106,8 @@ X11 server display id.
 $ bash clutch.sh --help
 Usage: clutch.sh [--bootstrap | --run | --kilall | --info]
   --bootstrap    Downloads and compiles required software
-  --killall      Kills all running Xephyr and dwm instances
   --run          Runs dwm session in Xephyr
+  --killall      Kills all running Xephyr and dwm instances
   --info         Displays all relavant paths and settings for Clutch
 ```
 

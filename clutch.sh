@@ -35,8 +35,8 @@ fi
 usage() {
 	echo "Usage: $0 [--bootstrap | --run | --kilall | --info]"
 	echo "  --bootstrap    Downloads and compiles required software"
-	echo "  --killall      Kills all running Xephyr and dwm instances"
 	echo "  --run          Runs dwm session in Xephyr"
+	echo "  --killall      Kills all running Xephyr and dwm instances"
 	echo "  --info         Displays all relavant paths and settings for Clutch"
 	exit 1
 }
