@@ -94,11 +94,6 @@ while [[ "$#" -gt 0 ]]; do
 			echo "Do not do 'make install' since it is not required. Relative path"
 			echo "is being appended to \$PATH and passed to the 'dwm'."
 			;;
-		--killall)
-			echo "Killing all the existing Xephyr and dwm instances..."
-			pkill -9 Xephyr
-			pkill -9 dwm
-			;;
 		--run)
 			echo "Starting Xephyr..."
 
@@ -113,6 +108,11 @@ while [[ "$#" -gt 0 ]]; do
 			Xephyr $XEPHYR_FLAGS -resizeable -screen $RESOLUTION -dpi $DPI -title "Clutch:$DISPLAY_ID" :$DISPLAY_ID &
 			sleep 1 # Give Xephyr a chance to properly start. 
 			DISPLAY=:$DISPLAY_ID dwm
+			;;
+		--killall)
+			echo "Killing all the existing Xephyr and dwm instances..."
+			pkill -9 Xephyr
+			pkill -9 dwm
 			;;
 		--info)
 			echo "General session settings:"
