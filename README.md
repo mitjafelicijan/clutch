@@ -120,7 +120,7 @@ Usage: clutch.sh [--bootstrap | --run]
 
 > [!TIP]
 > If you resize the window manually execute `xrandr` program in your `Xephyr`
-> session to Make `dwm` the size of the window.
+> session to make `dwm` the size of the window.
 
 ## Configuration
 
